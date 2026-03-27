@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flamengo - Meu Projeto</title>
+    <style>
+        *{box-sizing: border-box;}
+        
+        body{
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a; 
+            color: white;
+            
+            background-image: url("Imagem/fundo2.jpg");
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .cabecalho{
+            position: relative;
+            padding: 20px;
+            background: linear-gradient(90deg, #c40000 0%, #ff0000 100%);
+            color: black;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+
+        .logo-fla {
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 65px;
+            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
+        }
+
+        .cabecalho h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .container{
+            display: flex;
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 0 16px;
+            gap: 80px;
+            align-items: flex-start;
+        }
+
+        /* Colunas Laterais */
+        .esquerda, .direita{
+            width: 250px;
+            padding: 15px;
+            background-color: rgba(196, 0, 0, 0.9);
+            border-radius: 8px;
+            height: fit-content;
+        }
+
+        .esquerda h2, .direita h2 {
+            font-size: 1.2rem;
+            border-bottom: 2px solid black;
+            padding-bottom: 5px;
+            text-align: center;
+        }
+
+        .principal{
+            flex: 1;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.85);
+            border-radius: 10px;
+            min-width: 0;
+            border: 1px solid #333;
+        }
+
+        .noticia {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 20px;
+        }
+
+        .noticia:last-child { border: none; }
+
+        .noticia img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: transform 0.3s;
+        }
+
+        .noticia img:hover {
+            transform: scale(1.02);
+        }
+
+        .noticia h3 {
+            color: #ff4d4d;
+            margin: 10px 0;
+        }
+
+        /* Tabela Simples */
+        table {
+            width: 100%;
+            font-size: 0.8rem;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        td { padding: 5px; border-bottom: 1px solid rgba(0,0,0,0.1); }
+
+        /* Responsividade */
+        @media(max-width: 900px){
+            .container{ flex-wrap: wrap; }
+            .esquerda { width: 100%; order: 2; }
+            .principal { width: 100%; order: 1; }
+            .direita { width: 100%; order: 3; }
+        }
+
+        @media (max-width: 600px){
+            .cabecalho { flex-direction: column; padding: 40px 20px; }
+            .logo-fla { position: static; transform: none; margin-bottom: 10px; }
+        }
+
+        .rodape{
+            padding: 30px;
+            background: #000;
+            color: #888;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 3px solid #c40000;
+        }
+
+        .patrocinadores {
+            padding: 30px 0;
+            background-color: black; 
+            text-align: center;
+        }
+
+        .patrocinadores h3 {
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .logo-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; 
+            gap: 30px; 
+        }
+
+        .logo-grid img {
+            max-width: 150px; 
+            height: auto;
+            filter: grayscale(100%); 
+            transition: filter 0.3s ease; 
+        }
+
+        .logo-grid img:hover {
+            filter: grayscale(0%); 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cabecalho"> 
+        <img src="Imagem/fla1.png" class="logo-fla" alt="Logo do Flmenengo">
+        <h1>FLAMENGO</h1> 
+    </div>
+
+    <div class="container">
+        <div class="esquerda">
+            <h2>PRÓXIMOS JOGOS</h2>
+            <img src="Imagem/jogos.png" alt="Próximos jogos do Flamengo" class="img-jogos" width=220px>
+            <table>
+                <tr><td><b>FLA</b> x Flu</td><td>Dom 16h</td></tr>
+                <tr><td>Bota x <b>FLA</b></td><td>Qua 21h</td></tr>
+                <tr><td><b>FLA</b> x Remo</td><td>Sáb 19h</td></tr>
+            </table>
+            <br>
+            <p style="text-align: center; font-size: 0.9rem;">📍 Maracanã</p>
+            <a href="https://ingressos.flamengo.com.br/">Saiba Mais</a>
+        </div>
+
+        <div class="principal">
+            <div class="noticia">
+                <img src="Imagem/vitoria.jpeg" alt="Vitória do Flamengo">
+                <h3>BRASILEIRÃO 2026 - FLA 3X0 REMO</h3>
+                <p>O Mengão dominou a partida do início ao fim! Com show da torcida no Maraca, o time engatou a quarta vitória seguida. Veja os melhores momentos na <b>FlamengoTV</b>.</p>
+                <a href="https://youtu.be/HjhleV16xfc?si=Lrbz6WwKYo4hLmje">Ir para a FlamengoTV</a>
+            </div>
+        </div>
+
+        <div class="direita">
+            <img src="Imagem/titulos.png" alt="Títulos do Flamengo" class="img-titulos" width=220px>
+            <h2>PRINCIPAIS TÍTULOS</h2>
+            <p>• Mundial Interclubes: 1</p>
+            <p>• Libertadores: 4</p>
+            <p>• Campeonato Brasileiro: 8</p>
+            <p>• Copa do Brasil: 5</p>
+            <p>• Supercopa do Brasil: 3</p>
+            <p>• Recopa Sul-Americana: 1
+        </div>
+    </div>
+    
+    <div class="rodape">
+        <p>© 2026 Clube de Regatas do Flamengo</p>
+        <p><small>Desenvolvido para Professor Leandro</small></p>
+    </div>
+
+    <div class="patrocinadores">
+    <div class="container">
+        <div class="logo-grid">
+            <img src="Imagem/logo1.png" alt="Patrocinador 1" class="img-logo1">
+            <img src="Imagem/logo2.png" alt="Patrocinador 2" class="img-logo2">
+            <img src="Imagem/logo3.png" alt="Patrocinador 3" class="img-logo3">
+            <img src="Imagem/logo4.png" alt="Patrocinador 4" class="img-logo4">
+            <img src="Imagem/logo5.png" alt="Patrocinador 5" class="img-logo5">
+            <img src="Imagem/logo6.png" alt="Patrocinador 6" class="img-logo6">
+        </div>
+    </div>
+</body>
+</html>
